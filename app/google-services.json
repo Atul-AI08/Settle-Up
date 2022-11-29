@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "917183331849",
+    "project_id": "settle-up-17eb7",
+    "storage_bucket": "settle-up-17eb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917183331849:android:1acd2f583d9f22720802d8",
+        "android_client_info": {
+          "package_name": "com.example.settle_up"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917183331849-hdla20kr4t2k7und9b7732p1svd1v5t5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGev00ScbVz-GBTbEsgF_QAJG-02XGAto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917183331849-hdla20kr4t2k7und9b7732p1svd1v5t5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
