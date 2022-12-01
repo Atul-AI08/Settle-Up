@@ -13,5 +13,9 @@ class HomePage : AppCompatActivity() {
             val intent = Intent(this, CreateGroup::class.java)
             startActivity(intent)
         }
+        findViewById<Button>(R.id.button2).setOnClickListener {
+            val intent = Intent(this, ShowGroups::class.java)
+            startActivity(intent)
+        }
     }
 }

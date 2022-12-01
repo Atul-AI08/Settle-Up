@@ -57,10 +57,9 @@ class SignUp : AppCompatActivity() {
                 if (task.isSuccessful) {
                     val uid = Firebase.auth.currentUser?.uid.toString()
                     val data = hashMapOf<String, Any>()
-                    data["Name"] = name
+                    data["name"] = name
                     data["email"] = email
-                    data["user"] = uid
-                    db.collection("Users").add(data).addOnCompleteListener{
+                    db.collection("Users").document(uid).set(data).addOnCompleteListener{
                         val intent = Intent(this, HomePage::class.java)
                         startActivity(intent)
                     }

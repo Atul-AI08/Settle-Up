@@ -1,28 +1,33 @@
 package com.example.settle_up
 
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class GroupAdapter(private val mList: ArrayList<String>) : RecyclerView.Adapter<GroupAdapter.ViewHolder>() {
+class ChooseAdapter(private val mList: ArrayList<Details>, private var selected: ArrayList<String>) : RecyclerView.Adapter<ChooseAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_design_3, parent, false)
+            .inflate(R.layout.card_design_1, parent, false)
 
         return ViewHolder(view)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = mList[position]
-        val name = "Group: $data"
+        val name = data.name
+        val email = data.email
         holder.name.text = name
-        holder.itemView.setOnClickListener(View.OnClickListener {
-            Intent(holder.itemView.context, GroupDetails::class.java).also {
-                it.putExtra("name", data)
-                holder.itemView.context.startActivity(it)
+        holder.email.text = email
+        holder.checkbox.setOnClickListener(View.OnClickListener {
+            val isChecked: Boolean = holder.checkbox.isChecked
+            if (isChecked) {
+                Log.d("abc", email)
+                selected.add(email)
+            }else{
+                selected.remove(email)
             }
         })
     }
@@ -31,5 +36,7 @@ class GroupAdapter(private val mList: ArrayList<String>) : RecyclerView.Adapter<
     }
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val name: TextView =itemView.findViewById(R.id.name)
+        val email: TextView =itemView.findViewById(R.id.email)
+        val checkbox : CheckBox = itemView.findViewById(R.id.checkbox)
     }
 }

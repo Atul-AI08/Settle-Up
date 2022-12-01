@@ -9,12 +9,13 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.flow.merge
 
 class CreateGroup : AppCompatActivity() {
     private lateinit var etName : String
     private lateinit var auth: FirebaseAuth
-    private lateinit var mail : String
     private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,19 +25,19 @@ class CreateGroup : AppCompatActivity() {
             val data = hashMapOf<String, Any>()
             val user = Firebase.auth.currentUser?.uid.toString()
             etName = findViewById<EditText>(R.id.name).text.toString()
-            db.collection("Users").get().addOnSuccessListener {
-                for (document in it) {
-                    val uid = document["user"].toString()
-                    val email = document["email"].toString()
-                    if (user == uid) {
-                        mail = email
-                        data[mail] = 0
-                        db.collection("Groups").document(etName).set(data).addOnCompleteListener{
-                            Toast.makeText(this, "Group Created", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, AddUser::class.java)
-                            startActivity(intent)
-                        }
-                        break
+            db.collection("Users").document(user).get().addOnSuccessListener { document ->
+                val email = document["email"].toString()
+                val name = document["name"].toString()
+                data["email"] = email
+                data["name"] = name
+                data["amount"] = 0
+                db.collection("Groups").document(etName).collection("Users").document(email).set(data).addOnCompleteListener{
+                    Toast.makeText(this, "Group Created", Toast.LENGTH_SHORT).show()
+                    val groups = hashMapOf<String, Any>()
+                    groups[etName] = 0
+                    db.collection("UserGroups").document(email).set(groups, SetOptions.merge()).addOnCompleteListener{
+                        val intent = Intent(this, ShowGroups::class.java)
+                        startActivity(intent)
                     }
                 }
             }
