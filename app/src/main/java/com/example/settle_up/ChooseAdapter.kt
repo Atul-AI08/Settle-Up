@@ -18,16 +18,17 @@ class ChooseAdapter(private val mList: ArrayList<Details>, private var selected:
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = mList[position]
         val name = data.name
-        val email = data.email
+        val mail = data.email
+        val email = "Email: $mail"
         holder.name.text = name
         holder.email.text = email
         holder.checkbox.setOnClickListener(View.OnClickListener {
             val isChecked: Boolean = holder.checkbox.isChecked
             if (isChecked) {
-                Log.d("abc", email)
-                selected.add(email)
+                Log.d("abc", mail)
+                selected.add(mail)
             }else{
-                selected.remove(email)
+                selected.remove(mail)
             }
         })
     }

@@ -22,7 +22,8 @@ class AddUser : AppCompatActivity() {
             data["email"] = email
             data["name"] = name
             data["amount"] = 0
-            db.collection("Groups").document(group).collection("Users").add(data).addOnCompleteListener{
+            db.collection("Groups").document(group).collection("Users").document(email).set(data)
+                .addOnCompleteListener{
                 Toast.makeText(this, "User Added", Toast.LENGTH_SHORT).show()
                 val groups = hashMapOf<String, Any>()
                 groups[group] = 0

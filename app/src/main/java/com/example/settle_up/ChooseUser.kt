@@ -41,7 +41,7 @@ class ChooseUser : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
         db.collection("Groups").document(group).collection("Users").get().addOnSuccessListener {
             for (document in it){
-                val email = "Email: " + document["email"].toString()
+                val email = document["email"].toString()
                 val name = "Name: " + document["name"].toString()
                 val amount = "0"
                 data.add(Details(name, email, amount))

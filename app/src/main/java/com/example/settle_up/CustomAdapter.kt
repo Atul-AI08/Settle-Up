@@ -15,9 +15,9 @@ class CustomAdapter(private val mList: ArrayList<Details>) : RecyclerView.Adapte
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = mList[position]
-        val name = data.name
-        val email = data.email
-        val amount = data.amount
+        val name = "Name: " + data.name
+        val email = "Email: " +  data.email
+        val amount = "Amount: " + data.amount
         holder.name.text = name
         holder.email.text = email
         holder.amount.text = amount

@@ -20,12 +20,13 @@ class AmountAdapter(private val mList: ArrayList<Details>, private val amount: H
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = mList[position]
         val name = data.name
-        val email = data.email
+        val mail = data.email
+        val email = "Email: $mail"
         holder.name.text = name
         holder.email.text = email
         holder.share.addTextChangedListener {
             if(isNumeric(holder.share.text.toString())){
-                amount[email] = holder.share.text.toString()
+                amount[mail] = holder.share.text.toString()
             }else{
                 Toast.makeText(holder.itemView.context, "Enter numerical value", Toast.LENGTH_SHORT).show()
             }

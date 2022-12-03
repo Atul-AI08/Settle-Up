@@ -33,7 +33,12 @@ class GroupDetails : AppCompatActivity() {
             startActivity(intent)
         }
         findViewById<Button>(R.id.button2).setOnClickListener {
-            val intent = Intent(this, ChooseUser::class.java)
+            val intent = Intent(this, Amount::class.java)
+            intent.putExtra("name", group)
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.button3).setOnClickListener {
+            val intent = Intent(this, History::class.java)
             intent.putExtra("name", group)
             startActivity(intent)
         }
@@ -42,9 +47,9 @@ class GroupDetails : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
         db.collection("Groups").document(group).collection("Users").get().addOnSuccessListener {
             for (document in it){
-                val email = "Email: " + document["email"].toString()
-                val name = "Name: " + document["name"].toString()
-                val amount = "Amount: " + document["amount"].toString()
+                val email = document["email"].toString()
+                val name = document["name"].toString()
+                val amount = document["amount"].toString()
                 data.add(Details(name, email, amount))
                 customAdapter.notifyDataSetChanged()
             }

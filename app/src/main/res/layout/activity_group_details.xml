@@ -5,15 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/copy_of_national"
     tools:context=".GroupDetails">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button1"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
-        android:layout_marginStart="85dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:background="@color/cool"
         android:padding="15dp"
         android:text="Add Member"
         android:textColor="@color/black"
@@ -23,9 +25,22 @@
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:layout_marginStart="85dp"
+        android:layout_gravity="center"
+        android:background="@color/cool"
         android:padding="15dp"
         android:text="Split"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button3"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="center"
+        android:background="@color/cool"
+        android:padding="15dp"
+        android:text="History"
         android:textColor="@color/black"
         android:textSize="20sp" />
 

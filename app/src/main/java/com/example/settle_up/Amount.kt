@@ -18,6 +18,7 @@ class Amount : AppCompatActivity() {
             if(isNumeric(amount)){
                 val intent = Intent(this, ChooseUser::class.java)
                 intent.putExtra("amount", amount)
+                intent.putExtra("name", group)
                 startActivity(intent)
             }else{
                 Toast.makeText(this, "Enter numerical value", Toast.LENGTH_SHORT).show()

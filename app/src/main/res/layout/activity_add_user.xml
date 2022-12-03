@@ -5,49 +5,47 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    android:background="@color/cool"
+    android:background="@drawable/untitled_design__1_"
     tools:context=".AddUser">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="34dp"
-        android:layout_marginBottom="240dp"
         android:orientation="vertical"
         android:paddingLeft="32dp"
         android:paddingRight="32dp">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="171dp"
-            android:layout_marginStart="68dp"
-            android:layout_marginTop="42dp"
-            android:layout_marginEnd="71dp"
-            android:layout_marginBottom="38dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="142dp"
+            android:layout_marginBottom="68dp"
             android:gravity="center"
             android:text="Add User"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/black"
             android:textSize="34sp"
             tools:ignore="SmallSp" />
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:drawablePadding="16dp"
             android:drawableEnd="@drawable/ic_baseline_email_24"
             android:hint="User Email"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="20sp" />
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
             android:drawablePadding="16dp"
             android:hint="Username"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="20sp" />
 
@@ -56,7 +54,8 @@
             android:id="@+id/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="126dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="22dp"
             android:gravity="center"
             android:text="Add"
             android:background="@color/cool"

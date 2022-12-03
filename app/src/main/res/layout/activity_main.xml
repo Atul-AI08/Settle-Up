@@ -5,39 +5,38 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    android:background="@color/cool"
+    android:background="@drawable/untitled_design__1_"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="34dp"
-        android:layout_marginBottom="190dp"
         android:orientation="vertical"
         android:paddingLeft="32dp"
         android:paddingRight="32dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="171dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="142dp"
             android:layout_marginBottom="38dp"
             android:gravity="center"
-            android:text="Welcome to Split"
-            android:textColor="@color/purple_700"
+            android:text="Welcome to Settle-Up"
+            android:textColor="@color/black"
             android:textSize="34sp"
             tools:ignore="SmallSp" />
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
             android:drawableEnd="@drawable/ic_baseline_email_24"
             android:drawablePadding="16dp"
             android:hint="Email"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="20sp" />
 
@@ -48,7 +47,6 @@
             android:layout_gravity="end"
             android:text="Forgot Password"
             android:textAllCaps="false"
-            android:background="@color/cool"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -57,7 +55,7 @@
             android:id="@+id/pass"
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:drawableEnd="@drawable/ic_baseline_lock_24"
             android:drawablePadding="16dp"
@@ -70,6 +68,7 @@
             android:id="@+id/signin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:text="Login"
@@ -90,7 +89,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@color/cool"
                 android:text="Don't have an account?"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
@@ -100,7 +98,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@color/cool"
                 android:text=" Sign Up"
                 android:textAllCaps="false"
                 android:textColor="@color/black"

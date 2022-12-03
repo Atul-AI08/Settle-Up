@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/copy_of_national"
     tools:context=".ChooseUser">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -16,11 +17,12 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button1"
-        android:layout_width="240dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
-        android:layout_marginStart="85dp"
+        android:layout_gravity="center"
+        android:background="@color/cool"
         android:padding="15dp"
         android:text="Split"
         android:textColor="@color/black"
